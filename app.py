@@ -32,7 +32,6 @@ for message in st.session_state.messages:
 
 
 if prompt := st.chat_input("What is up?"):
-    st.session_state.messages.append({"role": "user", "content": prompt})
     with st.chat_message("user"):
         if prompt.startswith("@"):
             model_tag = prompt[1:].split()[0]
@@ -41,6 +40,8 @@ if prompt := st.chat_input("What is up?"):
                 st.markdown(f"**Switched to `{st.session_state['model_name']}`**")
                 prompt = prompt.replace(f"@{model_tag}", "").strip()
         st.markdown(prompt)
+        
+    st.session_state.messages.append({"role": "user", "content": prompt})
 
     with st.chat_message("assistant"):
         stream = client.chat.completions.create(
