@@ -2,11 +2,11 @@ from openai import OpenAI
 import streamlit as st
 
 st.title("Solar Mini Chatbot")
-st.write("""This is a mini chatbot that uses the Solar API to generate responses. 
-            You can use the `@` symbol to switch between different models. 
-         For example, `@enko` will switch to the Solar-mini-en-ko model, 
+st.write(""" Use the `@` symbol to switch between different models: 
+         `@enko` will switch to the Solar-mini-en-ko model, 
          and `@koen` will switch to the Solar-mini-ko-en.
         You can also use `@chat` to switch back to the default chat model.""")
+st.write("Visit https://console.upstage.ai to get your Solar API key.")
 
 tags = {"enko": "upstage/solar-1-mini-translate-enko", 
         "koen": "upstage/solar-1-mini-translate-koen", 
