@@ -1,7 +1,7 @@
 from openai import OpenAI
 import streamlit as st
 
-st.title("Solar Mini Chatbot")
+st.title("🌞 Solar Mini Chatbot")
 st.write(
     """ Use the `@` symbol to switch between different models: 
          `@enko` will switch to the Solar-mini-en-ko model, 
